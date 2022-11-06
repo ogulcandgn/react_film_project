@@ -91,7 +91,9 @@ function SearchMovie() {
         </div>
       </div>
       {/* content */}
-      {movieData.length === 0 && <p>Sonuç bulunamadı</p>}
+      {movieData.length === 0 && (
+        <p className="container mx-auto">Sonuç bulunamadı</p>
+      )}
       <div className="container mx-auto my-10 p-5">
         <div
           id="movie_card"
@@ -100,7 +102,11 @@ function SearchMovie() {
           {movieData.map((item) => {
             return (
               <div className="w-72 shadow-lg">
-                <img src={item.img} />
+                <img
+                  className="w-full"
+                  style={{ height: "400px" }}
+                  src={item.img}
+                />
                 <div className="px-4 mb-4">
                   <h2 className="text-xl my-3">{item.title}</h2>
                   <p>{item.desc}</p>
